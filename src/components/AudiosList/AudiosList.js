@@ -3,10 +3,12 @@ import shallowCompare from 'react-addons-shallow-compare';
 
 import {getGenreById} from '../../helpers/genres';
 
-import LoaderHOC from '../../hoc/LoaderHOC/LoaderHOC';
+import loaderHOC from '../../hoc/LoaderHOC/LoaderHOC';
 import AudioItem from '../AudioItem/AudioItem';
 
-class AudiosList extends Component {
+
+@loaderHOC('ids')
+export default class AudiosList extends Component {
 	static propTypes = {
 		ids: PropTypes.array.isRequired,
 		audios: PropTypes.object.isRequired,
@@ -51,5 +53,3 @@ class AudiosList extends Component {
 			audio.owner_id === this.props.activeAudioOwnerId;
 	}
 }
-
-export default LoaderHOC('ids')(AudiosList);

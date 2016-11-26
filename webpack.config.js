@@ -70,7 +70,7 @@ let config = {
 			loader: 'babel',
 			query: {
 				presets: ['react', 'es2015', 'stage-1'],
-				plugins: ['transform-runtime']
+				plugins: ['transform-runtime', 'transform-decorators-legacy']
 			}
 		}, {
 			test: /\.(eot|otf)/,
